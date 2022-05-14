@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:project_two/widgets/button.dart';
+import 'package:project_two/widgets/textField.dart';
 
-import 'colors.dart';
+import '../core/colors.dart';
 
 class CreateAccount extends StatefulWidget {
   const CreateAccount({Key? key}) : super(key: key);
@@ -13,13 +15,14 @@ class _CreateAccountState extends State<CreateAccount> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: dColorWhite,
+      backgroundColor: const Color.fromRGBO(249, 249, 249, 1),
       body: Container(
         decoration: const BoxDecoration(
           image: DecorationImage(
             alignment: Alignment.topLeft,
             image: AssetImage('images/rightlogo.png'),
             opacity: 50,
+            scale: 1.2,
           ),
         ),
         child: Padding(
@@ -52,64 +55,30 @@ class _CreateAccountState extends State<CreateAccount> {
                   ),
                 ],
               ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: TextFormField(
-                  decoration: const InputDecoration(
-                    labelText: 'Email',
-                    border: OutlineInputBorder(),
-                  ),
-                  obscureText: true,
-                ),
+              const AppTextFormField(
+                labelText: 'Email',
+                obscureText: false,
               ),
               const SizedBox(
                 height: 10,
               ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: TextFormField(
-                  decoration: const InputDecoration(
-                    labelText: 'Password',
-                    border: OutlineInputBorder(),
-                  ),
-                  obscureText: true,
-                ),
+              const AppTextFormField(
+                labelText: 'Password',
+                obscureText: true,
               ),
               const SizedBox(
                 height: 10.0,
               ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: TextFormField(
-                  decoration: const InputDecoration(
-                    labelText: 'Confirm password',
-                    border: OutlineInputBorder(),
-                  ),
-                  obscureText: true,
-                ),
+              const AppTextFormField(
+                labelText: 'Confirm password',
+                obscureText: true,
               ),
               const SizedBox(
                 height: 10,
               ),
-              Container(
-                height: 50,
-                width: double.infinity,
-                padding: const EdgeInsets.fromLTRB(8, 0, 8, 0),
-                child: ElevatedButton(
-                  onPressed: () {},
-                  child: const Text(
-                    'Sign up',
-                    style: TextStyle(
-                      fontFamily: 'Source Sans Pro',
-                      fontSize: 20.0,
-                      fontStyle: FontStyle.normal,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  style: ElevatedButton.styleFrom(
-                    primary: dColorDarkBlue,
-                  ),
-                ),
+              const AppButton(
+                text: 'Sign up',
+                color: blueBlue,
               ),
               const SizedBox(
                 height: 50.0,

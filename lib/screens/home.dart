@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:project_two/colors.dart';
-import 'package:project_two/login.dart';
+import 'package:project_two/core/colors.dart';
+import 'package:project_two/screens/login.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);

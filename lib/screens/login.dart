@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:project_two/colors.dart';
+import 'package:project_two/core/colors.dart';
+import 'package:project_two/widgets/button.dart';
+import 'package:project_two/widgets/textField.dart';
 
 class Login extends StatefulWidget {
   const Login({Key? key}) : super(key: key);
@@ -21,6 +23,7 @@ class _LoginState extends State<Login> {
               alignment: Alignment.topRight,
               image: AssetImage('images/leftlogo.png'),
               opacity: 50,
+              scale: 1.1,
             ),
           ),
           child: Padding(
@@ -53,51 +56,15 @@ class _LoginState extends State<Login> {
                     ),
                   ],
                 ),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: TextFormField(
-                    decoration: const InputDecoration(
-                      labelText: 'Email',
-                      border: OutlineInputBorder(),
-                    ),
-                    obscureText: false,
-                  ),
-                ),
-                // const SizedBox(
-                //   height: 10,
-                // ),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: TextFormField(
-                    decoration: const InputDecoration(
-                      labelText: 'Password',
-                      border: OutlineInputBorder(),
-                    ),
-                    obscureText: true,
-                  ),
-                ),
+                const AppTextFormField(labelText: 'Email', obscureText: false),
+                const AppTextFormField(
+                    labelText: 'Password', obscureText: true),
                 const SizedBox(
                   height: 10.0,
                 ),
-                Container(
-                  height: 50,
-                  width: double.infinity,
-                  padding: const EdgeInsets.fromLTRB(8, 0, 8, 0),
-                  child: ElevatedButton(
-                    onPressed: () {},
-                    child: const Text(
-                      'Sign in',
-                      style: TextStyle(
-                        fontFamily: 'Source Sans Pro',
-                        fontSize: 20.0,
-                        fontStyle: FontStyle.normal,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    style: ElevatedButton.styleFrom(
-                      primary: dColorDarkBlue,
-                    ),
-                  ),
+                const AppButton(
+                  text: 'Sign in',
+                  color: blueBlue,
                 ),
                 const SizedBox(
                   height: 50.0,
@@ -194,14 +161,3 @@ class _LoginState extends State<Login> {
     );
   }
 }
-
-//
-//
-// Container(
-// decoration: const BoxDecoration(
-// image: DecorationImage(
-// image: AssetImage('images/logo.png'),
-// fit: BoxFit.cover,
-// ),
-// ),
-// ),

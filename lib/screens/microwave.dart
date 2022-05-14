@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:project_two/colors.dart';
+import 'package:project_two/core/colors.dart';
 
 class MicrowaveScreen extends StatefulWidget {
   const MicrowaveScreen({Key? key}) : super(key: key);
@@ -12,11 +12,11 @@ class _MicrowaveScreenState extends State<MicrowaveScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: dColorWhiteGrey,
+      backgroundColor: whiteLight,
       body: Column(
         children: [
           Container(
-            height: 409,
+            height: 400,
             padding: const EdgeInsets.only(left: 20),
             decoration: const BoxDecoration(
               image: DecorationImage(
@@ -25,12 +25,10 @@ class _MicrowaveScreenState extends State<MicrowaveScreen> {
                 opacity: 1,
                 scale: 1.1,
               ),
-              color: dColorLightPink,
+              color: lightRed,
               borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(20.0),
-                topRight: Radius.circular(20.0),
-                bottomLeft: Radius.circular(20.0),
-                bottomRight: Radius.circular(20.0),
+                bottomLeft: Radius.circular(10.0),
+                bottomRight: Radius.circular(10.0),
               ),
             ),
             child: Column(
@@ -80,7 +78,7 @@ class _MicrowaveScreenState extends State<MicrowaveScreen> {
                     // padding: const EdgeInsets.all(16),
                     child: OutlinedButton(
                       style: OutlinedButton.styleFrom(
-                        backgroundColor: dColorLightPink,
+                        backgroundColor: lightRed,
                       ),
                       onPressed: () {},
                       child: const Text(
@@ -137,6 +135,7 @@ class _MicrowaveScreenState extends State<MicrowaveScreen> {
               trailing: const Text(
                 '\$52',
                 style: TextStyle(
+                  fontSize: 13,
                   fontStyle: FontStyle.normal,
                   fontWeight: FontWeight.bold,
                   color: dColorBlack,
@@ -158,6 +157,7 @@ class _MicrowaveScreenState extends State<MicrowaveScreen> {
               leading: const Text(
                 'Setup',
                 style: TextStyle(
+                  fontSize: 13,
                   fontStyle: FontStyle.normal,
                   fontWeight: FontWeight.bold,
                   color: dColorBlack,
@@ -166,11 +166,69 @@ class _MicrowaveScreenState extends State<MicrowaveScreen> {
               trailing: const Text(
                 '\$12',
                 style: TextStyle(
+                  fontSize: 13,
                   fontStyle: FontStyle.normal,
                   fontWeight: FontWeight.bold,
                   color: dColorBlack,
                 ),
               ),
+            ),
+          ),
+          const SizedBox(
+            height: 40,
+          ),
+          Padding(
+            padding: const EdgeInsets.only(left: 40.0, right: 40.0),
+            child: Row(
+              children: [
+                Expanded(
+                  flex: 1,
+                  child: SizedBox(
+                    height: 50,
+                    // padding: const EdgeInsets.all(16),
+                    child: OutlinedButton(
+                      style: OutlinedButton.styleFrom(
+                        backgroundColor: dColorBlack,
+                      ),
+                      onPressed: () {},
+                      child: const Text(
+                        'Order repair',
+                        style: TextStyle(
+                          fontSize: 13,
+                          fontStyle: FontStyle.normal,
+                          fontWeight: FontWeight.bold,
+                          color: whiteLight,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                const SizedBox(
+                  width: 40,
+                ),
+                Expanded(
+                  flex: 1,
+                  child: SizedBox(
+                    height: 50,
+                    // padding: const EdgeInsets.all(16),
+                    child: OutlinedButton(
+                      style: OutlinedButton.styleFrom(
+                        backgroundColor: dColorBlack,
+                      ),
+                      onPressed: () {},
+                      child: const Text(
+                        'Order setup',
+                        style: TextStyle(
+                          fontSize: 13,
+                          fontStyle: FontStyle.normal,
+                          fontWeight: FontWeight.bold,
+                          color: whiteLight,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ],
             ),
           )
         ],

@@ -5,7 +5,7 @@ import 'package:project_two/screens/home.dart';
 import 'package:project_two/screens/menu.dart';
 import 'package:project_two/screens/microwave.dart';
 
-import 'screens/login.dart';
+import '../screens/login.dart';
 
 class App extends StatefulWidget {
   const App({Key? key}) : super(key: key);

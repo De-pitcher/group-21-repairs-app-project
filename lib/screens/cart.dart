@@ -1,7 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:project_two/colors.dart';
+import 'package:project_two/core/colors.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
+import 'package:project_two/widgets/button.dart';
 import 'package:project_two/widgets/display_field.dart';
 
 class CartScreen extends StatefulWidget {
@@ -185,7 +186,7 @@ class _CartScreenState extends State<CartScreen> {
                   ),
                 ),
                 SizedBox(
-                  width: 300,
+                  width: 280,
                 ),
                 Text(
                   '\$302',
@@ -198,24 +199,11 @@ class _CartScreenState extends State<CartScreen> {
                 ),
               ],
             ),
-            Container(
-              height: 63,
-              width: double.infinity,
-              padding: const EdgeInsets.fromLTRB(40, 0, 40, 0),
-              child: ElevatedButton(
-                onPressed: () {},
-                child: const Text(
-                  'Make an order',
-                  style: TextStyle(
-                    fontFamily: 'Source Sans Pro',
-                    fontSize: 16.0,
-                    fontStyle: FontStyle.normal,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                style: ElevatedButton.styleFrom(
-                  primary: bBlack,
-                ),
+            const Padding(
+              padding: EdgeInsets.only(left: 20.0, right: 20.0),
+              child: AppButton(
+                text: 'Make an order',
+                color: bBlack,
               ),
             ),
           ],

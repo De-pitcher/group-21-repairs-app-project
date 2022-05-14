@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:project_two/colors.dart';
+import 'package:project_two/core/colors.dart';
 import 'package:project_two/widgets/display_field.dart';
 
 class Menu extends StatefulWidget {
@@ -15,7 +15,7 @@ class _MenuState extends State<Menu> {
     return Scaffold(
       backgroundColor: whiteLight,
       appBar: AppBar(
-        backgroundColor: dColorWhiteGrey,
+        backgroundColor: whiteLight,
         leading: const Image(
           image: AssetImage('images/menu.png'),
         ),
@@ -167,7 +167,7 @@ class _MenuState extends State<Menu> {
                         Container(
                           height: 60,
                           decoration: const BoxDecoration(
-                            color: dColorLightLightBlue,
+                            color: dColorWhiteGrey,
                             borderRadius: BorderRadius.only(
                               topLeft: Radius.circular(40.0),
                               topRight: Radius.circular(40.0),
