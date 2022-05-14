@@ -1,7 +1,6 @@
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:project_two/colors.dart';
+import 'package:project_two/widgets/display_field.dart';
 
 class Menu extends StatefulWidget {
   const Menu({Key? key}) : super(key: key);
@@ -14,7 +13,7 @@ class _MenuState extends State<Menu> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: dColorWhiteGrey,
+      backgroundColor: whiteLight,
       appBar: AppBar(
         backgroundColor: dColorWhiteGrey,
         leading: const Image(
@@ -67,7 +66,6 @@ class _MenuState extends State<Menu> {
                     style: TextStyle(
                       fontSize: 17.0,
                       fontStyle: FontStyle.normal,
-                      color: dColorGrey,
                     ),
                   ),
                   trailing: Image(
@@ -150,6 +148,7 @@ class _MenuState extends State<Menu> {
                             ],
                           ),
                           decoration: const BoxDecoration(
+                            color: lightWhite,
                             borderRadius: BorderRadius.only(
                               bottomLeft: Radius.circular(40.0),
                               bottomRight: Radius.circular(40.0),
@@ -215,7 +214,7 @@ class _MenuState extends State<Menu> {
                             ],
                           ),
                           decoration: const BoxDecoration(
-                            color: dColorLightIndigo,
+                            color: primaryColor2,
                             borderRadius: BorderRadius.only(
                               bottomLeft: Radius.circular(40.0),
                               bottomRight: Radius.circular(40.0),
@@ -309,98 +308,18 @@ class _MenuState extends State<Menu> {
                 ],
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.all(20.0),
-              child: ListTile(
-                shape: RoundedRectangleBorder(
-                  side: const BorderSide(
-                    color: dColorLightLightBlue,
-                    width: 0.5,
-                  ),
-                  borderRadius: BorderRadius.circular(5),
-                ),
-                tileColor: dColorLightLightBlue,
-                leading: const Card(
-                  color: dColorSkyBlue,
-                  child: Image(
-                    image: AssetImage('images/microwave_icon.png'),
-                    height: 40,
-                    width: 40,
-                  ),
-                ),
-                title: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: const [
-                    Text(
-                      'Fix Microwave',
-                      style: TextStyle(
-                        fontSize: 17.0,
-                        fontStyle: FontStyle.normal,
-                        fontWeight: FontWeight.bold,
-                        color: dColorBlack,
-                      ),
-                    ),
-                    Text(
-                      'Kitchen',
-                      style: TextStyle(
-                        fontSize: 15.0,
-                        fontStyle: FontStyle.normal,
-                        color: dColorGrey,
-                      ),
-                    ),
-                  ],
-                ),
-                trailing: const Icon(
-                  Icons.arrow_forward_ios,
-                  color: dColorBlack,
-                ),
-              ),
+            const DisplayField(
+              image: AssetImage('images/microwave_icon.png'),
+              titleText: 'Fix Microwave',
+              desText: 'Kitchen',
             ),
-            Padding(
-              padding: const EdgeInsets.all(20.0),
-              child: ListTile(
-                shape: RoundedRectangleBorder(
-                    side: const BorderSide(
-                      color: dColorLightLightBlue,
-                      width: 0.5,
-                    ),
-                    borderRadius: BorderRadius.circular(5)),
-                tileColor: dColorLightLightBlue,
-                leading: const Card(
-                  color: dColorSkyBlue,
-                  child: Image(
-                    image: AssetImage('images/television_icon.png'),
-                    height: 40,
-                    width: 40,
-                  ),
-                ),
-                title: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: const [
-                    Text(
-                      'Fix TV set',
-                      style: TextStyle(
-                        fontSize: 17.0,
-                        fontStyle: FontStyle.normal,
-                        fontWeight: FontWeight.bold,
-                        color: dColorBlack,
-                      ),
-                    ),
-                    Text(
-                      'Living room',
-                      style: TextStyle(
-                        fontSize: 15.0,
-                        fontStyle: FontStyle.normal,
-                        color: dColorGrey,
-                      ),
-                    ),
-                  ],
-                ),
-                trailing: const Icon(
-                  Icons.arrow_forward_ios,
-                  color: dColorBlack,
-                ),
-              ),
+            const SizedBox(
+              height: 20,
+            ),
+            const DisplayField(
+              image: AssetImage('images/television_icon.png'),
+              titleText: 'Fix TV set',
+              desText: 'Living room',
             ),
           ],
         ),

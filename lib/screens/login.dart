@@ -14,7 +14,7 @@ class _LoginState extends State<Login> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        backgroundColor: dColorWhite,
+        backgroundColor: const Color.fromRGBO(249, 249, 249, 1),
         body: Container(
           decoration: const BoxDecoration(
             image: DecorationImage(
@@ -60,12 +60,12 @@ class _LoginState extends State<Login> {
                       labelText: 'Email',
                       border: OutlineInputBorder(),
                     ),
-                    obscureText: true,
+                    obscureText: false,
                   ),
                 ),
-                const SizedBox(
-                  height: 10,
-                ),
+                // const SizedBox(
+                //   height: 10,
+                // ),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: TextFormField(

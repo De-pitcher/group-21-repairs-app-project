@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:project_two/create_account.dart';
-import 'package:project_two/home.dart';
-import 'package:project_two/menu.dart';
+import 'package:project_two/screens/cart.dart';
+import 'package:project_two/screens/create_account.dart';
+import 'package:project_two/screens/home.dart';
+import 'package:project_two/screens/menu.dart';
+import 'package:project_two/screens/microwave.dart';
 
-import 'login.dart';
+import 'screens/login.dart';
 
 class App extends StatefulWidget {
   const App({Key? key}) : super(key: key);
@@ -20,7 +22,7 @@ class _AppState extends State<App> {
       title: 'Group 21',
       initialRoute: '/login',
       routes: {
-        '/login': (BuildContext context) => const Menu(),
+        '/login': (BuildContext context) => const MicrowaveScreen(),
       },
     );
   }
