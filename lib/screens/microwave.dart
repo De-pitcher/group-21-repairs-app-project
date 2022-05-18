@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:project_two/core/colors.dart';
+import 'package:project_two/core/constants.dart';
+import 'package:project_two/widgets/display_field.dart';
 
 class MicrowaveScreen extends StatefulWidget {
   const MicrowaveScreen({Key? key}) : super(key: key);
@@ -12,7 +14,7 @@ class _MicrowaveScreenState extends State<MicrowaveScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: whiteLight,
+      backgroundColor: kWhiteLight,
       body: Column(
         children: [
           Container(
@@ -25,7 +27,7 @@ class _MicrowaveScreenState extends State<MicrowaveScreen> {
                 opacity: 1,
                 scale: 1.1,
               ),
-              color: lightRed,
+              color: kLightRed,
               borderRadius: BorderRadius.only(
                 bottomLeft: Radius.circular(10.0),
                 bottomRight: Radius.circular(10.0),
@@ -39,17 +41,12 @@ class _MicrowaveScreenState extends State<MicrowaveScreen> {
                 ListTile(
                   leading: Icon(
                     Icons.arrow_back_ios,
-                    color: dColorBlack,
+                    color: kBBlack,
                   ),
                   title: Center(
                     child: Text(
                       'Fix Microwave',
-                      style: TextStyle(
-                        fontSize: 20.0,
-                        fontStyle: FontStyle.normal,
-                        fontWeight: FontWeight.bold,
-                        color: dColorBlack,
-                      ),
+                      style: kBiggerBlackTextStyle,
                     ),
                   ),
                 ),
@@ -78,7 +75,7 @@ class _MicrowaveScreenState extends State<MicrowaveScreen> {
                     // padding: const EdgeInsets.all(16),
                     child: OutlinedButton(
                       style: OutlinedButton.styleFrom(
-                        backgroundColor: lightRed,
+                        backgroundColor: kLightRed,
                       ),
                       onPressed: () {},
                       child: const Text(
@@ -87,7 +84,7 @@ class _MicrowaveScreenState extends State<MicrowaveScreen> {
                           fontSize: 17,
                           fontStyle: FontStyle.normal,
                           fontWeight: FontWeight.bold,
-                          color: dColorGrey,
+                          color: Colors.brown,
                         ),
                       ),
                     ),
@@ -103,7 +100,7 @@ class _MicrowaveScreenState extends State<MicrowaveScreen> {
                     // padding: const EdgeInsets.all(16),
                     child: OutlinedButton(
                       style: OutlinedButton.styleFrom(
-                        backgroundColor: dColorBlack,
+                        backgroundColor: kBBlack,
                       ),
                       onPressed: () {},
                       child: Image.asset('images/message_icon.png'),
@@ -116,64 +113,11 @@ class _MicrowaveScreenState extends State<MicrowaveScreen> {
           const SizedBox(
             height: 40,
           ),
-          Padding(
-            padding: const EdgeInsets.only(left: 40.0, right: 40.0),
-            child: ListTile(
-              shape: RoundedRectangleBorder(
-                side: const BorderSide(color: dColorWhiteGrey, width: 0.5),
-                borderRadius: BorderRadius.circular(5),
-              ),
-              tileColor: dColorWhite,
-              leading: const Text(
-                'Repairs',
-                style: TextStyle(
-                  fontStyle: FontStyle.normal,
-                  fontWeight: FontWeight.bold,
-                  color: dColorBlack,
-                ),
-              ),
-              trailing: const Text(
-                '\$52',
-                style: TextStyle(
-                  fontSize: 13,
-                  fontStyle: FontStyle.normal,
-                  fontWeight: FontWeight.bold,
-                  color: dColorBlack,
-                ),
-              ),
-            ),
-          ),
+          const CardDisplayField(titleText: 'Repairs', trailingText: '\$52'),
           const SizedBox(
             height: 40,
           ),
-          Padding(
-            padding: const EdgeInsets.only(left: 40.0, right: 40.0),
-            child: ListTile(
-              shape: RoundedRectangleBorder(
-                side: const BorderSide(color: dColorWhiteGrey, width: 0.5),
-                borderRadius: BorderRadius.circular(5),
-              ),
-              tileColor: dColorWhite,
-              leading: const Text(
-                'Setup',
-                style: TextStyle(
-                  fontSize: 13,
-                  fontStyle: FontStyle.normal,
-                  fontWeight: FontWeight.bold,
-                  color: dColorBlack,
-                ),
-              ),
-              trailing: const Text(
-                '\$12',
-                style: TextStyle(
-                  fontSize: 13,
-                  fontStyle: FontStyle.normal,
-                  fontWeight: FontWeight.bold,
-                  color: dColorBlack,
-                ),
-              ),
-            ),
-          ),
+          const CardDisplayField(titleText: 'Setup', trailingText: '\$12'),
           const SizedBox(
             height: 40,
           ),
@@ -188,17 +132,12 @@ class _MicrowaveScreenState extends State<MicrowaveScreen> {
                     // padding: const EdgeInsets.all(16),
                     child: OutlinedButton(
                       style: OutlinedButton.styleFrom(
-                        backgroundColor: dColorBlack,
+                        backgroundColor: kBBlack,
                       ),
                       onPressed: () {},
                       child: const Text(
                         'Order repair',
-                        style: TextStyle(
-                          fontSize: 13,
-                          fontStyle: FontStyle.normal,
-                          fontWeight: FontWeight.bold,
-                          color: whiteLight,
-                        ),
+                        style: kWhiteSmallTextStyle,
                       ),
                     ),
                   ),
@@ -213,7 +152,7 @@ class _MicrowaveScreenState extends State<MicrowaveScreen> {
                     // padding: const EdgeInsets.all(16),
                     child: OutlinedButton(
                       style: OutlinedButton.styleFrom(
-                        backgroundColor: dColorBlack,
+                        backgroundColor: const Color(0xFFFFFFFF),
                       ),
                       onPressed: () {},
                       child: const Text(
@@ -222,7 +161,7 @@ class _MicrowaveScreenState extends State<MicrowaveScreen> {
                           fontSize: 13,
                           fontStyle: FontStyle.normal,
                           fontWeight: FontWeight.bold,
-                          color: whiteLight,
+                          color: kBBlack,
                         ),
                       ),
                     ),

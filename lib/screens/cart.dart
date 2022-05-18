@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:project_two/core/colors.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
+import 'package:project_two/core/constants.dart';
 import 'package:project_two/widgets/button.dart';
 import 'package:project_two/widgets/display_field.dart';
 
@@ -16,17 +17,17 @@ class _CartScreenState extends State<CartScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: whiteLight,
+      backgroundColor: kWhiteLight,
       body: Container(
         child: Column(
           children: [
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             const ListTile(
               leading: Icon(
                 Icons.arrow_back_ios,
-                color: dColorBlack,
+                color: kBBlack,
               ),
               title: Center(
                 child: Text(
@@ -35,117 +36,143 @@ class _CartScreenState extends State<CartScreen> {
                     fontSize: 19.0,
                     fontStyle: FontStyle.normal,
                     fontWeight: FontWeight.bold,
-                    color: dColorBlack,
+                    color: kBBlack,
                   ),
                 ),
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.all(35.0),
-              child: ExpansionTile(
-                tilePadding: EdgeInsets.zero,
-                initiallyExpanded: true,
-                collapsedBackgroundColor:
-                    const Color.fromRGBO(241, 244, 253, 1),
-                iconColor: bBlack,
-                title: ListTile(
-                  tileColor: const Color.fromRGBO(241, 244, 253, 1),
-                  leading: const Card(
-                    color: Color.fromRGBO(199, 217, 255, 1),
-                    child: Image(
-                      image: AssetImage('images/television_icon.png'),
-                      height: 40,
-                      width: 40,
-                    ),
-                  ),
-                  title: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: const [
-                      Text(
-                        'Fix Microwave',
-                        style: TextStyle(
-                          fontSize: 13.0,
-                          fontStyle: FontStyle.normal,
-                          fontWeight: FontWeight.bold,
-                          color: dColorBlack,
-                        ),
-                      ),
-                      Text(
-                        'Kitchen',
-                        style: TextStyle(
-                          fontSize: 12.0,
-                          fontStyle: FontStyle.normal,
-                          color: dColorGrey,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
+            const SizedBox(
+              height: 40,
+            ),
+            Container(
+              color: kWhiteLight,
+              width: 435,
+              child: Column(
                 children: [
-                  ListTile(
-                    tileColor: primaryColor3,
-                    leading: Stack(
-                      alignment: AlignmentDirectional.center,
-                      children: const [
-                        Image(
-                          color: Colors.red,
-                          image: AssetImage(
-                            'images/Ellipse 3.png',
-                          ),
-                          width: 19,
-                          height: 19,
+                  SizedBox(
+                    height: 63,
+                    child: Material(
+                      elevation: 8.0,
+                      child: Container(
+                        height: 63.0,
+                        width: 435.0,
+                        decoration: const BoxDecoration(
+                            color: Color(0xFFF1F4FD),
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(10))),
+                        child: Row(
+                          children: [
+                            const SizedBox(
+                              width: 10.0,
+                            ),
+                            Card(
+                              shape: RoundedRectangleBorder(
+                                  side: BorderSide.none,
+                                  borderRadius: BorderRadius.circular(5)),
+                              color: const Color(0xFFC7D9FF),
+                              child: const Image(
+                                image: AssetImage('images/microwave_icon.png'),
+                                height: 40,
+                                width: 40,
+                              ),
+                            ),
+                            const SizedBox(
+                              width: 30.0,
+                            ),
+                            SizedBox(
+                              width: 310.0,
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: const [
+                                  Text(
+                                    'Fix Microwave',
+                                    style: kBlackSmallTextStyle,
+                                  ),
+                                  Text(
+                                    'Kitchen',
+                                    style: kBlackSmallerTextStyle,
+                                  ),
+                                ],
+                              ),
+                            ),
+                            Row(
+                              crossAxisAlignment: CrossAxisAlignment.end,
+                              children: const [
+                                Icon(
+                                  Icons.arrow_forward_ios,
+                                  color: kBBlack,
+                                  size: 15,
+                                ),
+                              ],
+                            ),
+                          ],
                         ),
-                        Image(
-                          image: AssetImage(
-                            'images/content_line.png',
-                          ),
-                        ),
-                      ],
-                    ),
-                    title: const Text(
-                      'Set up Microwave',
-                      style: TextStyle(
-                        fontSize: 17.0,
-                        fontStyle: FontStyle.normal,
-                        fontWeight: FontWeight.bold,
-                        color: dColorBlack,
                       ),
                     ),
                   ),
-                  ListTile(
-                    tileColor: primaryColor3,
-                    leading: Stack(
-                      alignment: AlignmentDirectional.center,
-                      children: const [
-                        Image(
-                          color: Colors.red,
-                          image: AssetImage(
-                            'images/Ellipse 3.png',
+                  Container(
+                    height: 69,
+                    color: kPrimaryColor3,
+                    child: CartFoldingField(
+                      titleText: 'Set up Microwave',
+                      priceText: '\$22',
+                      child: Stack(
+                        alignment: AlignmentDirectional.center,
+                        children: const [
+                          Image(
+                            color: Colors.red,
+                            image: AssetImage(
+                              'images/Ellipse 3.png',
+                            ),
+                            width: 19,
+                            height: 19,
                           ),
-                          width: 19,
-                          height: 19,
-                        ),
-                        Image(
-                          image: AssetImage(
-                            'images/content_line.png',
+                          Image(
+                            image: AssetImage(
+                              'images/content_line.png',
+                            ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
-                    title: const Text(
-                      'Set up Microwave',
-                      style: TextStyle(
-                        fontSize: 17.0,
-                        fontStyle: FontStyle.normal,
-                        fontWeight: FontWeight.bold,
-                        color: dColorBlack,
+                  ),
+                  const SizedBox(
+                    height: 2,
+                  ),
+                  Container(
+                    height: 63,
+                    color: kPrimaryColor3,
+                    child: CartFoldingField(
+                      titleText: 'Repair Microwave',
+                      priceText: '\$80',
+                      child: Stack(
+                        alignment: AlignmentDirectional.center,
+                        children: const [
+                          Image(
+                            color: Colors.red,
+                            image: AssetImage(
+                              'images/Ellipse 3.png',
+                            ),
+                            width: 19,
+                            height: 19,
+                          ),
+                          Image(
+                            image: AssetImage(
+                              'images/content_line.png',
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                   ),
                 ],
               ),
             ),
-            const DisplayFieldWithPrice(
+            const SizedBox(
+              height: 20,
+            ),
+            const CartDisplayField(
               image: AssetImage('images/fridge.png'),
               titleText: 'Fix Fridge',
               desText: '2 Service',
@@ -154,7 +181,7 @@ class _CartScreenState extends State<CartScreen> {
             const SizedBox(
               height: 15,
             ),
-            const DisplayFieldWithPrice(
+            const CartDisplayField(
               image: AssetImage('images/computer.png'),
               titleText: 'Fix Washer',
               desText: '1 Service',
@@ -163,14 +190,14 @@ class _CartScreenState extends State<CartScreen> {
             const SizedBox(
               height: 15,
             ),
-            const DisplayFieldWithPrice(
+            const CartDisplayField(
               image: AssetImage('images/washer.png'),
               titleText: 'Fix Computer',
               desText: '2 Service',
               priceText: '\$30',
             ),
             const SizedBox(
-              height: 170,
+              height: 150.0,
             ),
             Row(
               children: const [
@@ -182,7 +209,7 @@ class _CartScreenState extends State<CartScreen> {
                   style: TextStyle(
                     fontSize: 16.0,
                     fontStyle: FontStyle.normal,
-                    color: bBlack,
+                    color: kBBlack,
                   ),
                 ),
                 SizedBox(
@@ -194,16 +221,17 @@ class _CartScreenState extends State<CartScreen> {
                     fontSize: 16.0,
                     fontStyle: FontStyle.normal,
                     fontWeight: FontWeight.bold,
-                    color: bBlack,
+                    color: kBBlack,
                   ),
                 ),
               ],
             ),
-            const Padding(
-              padding: EdgeInsets.only(left: 20.0, right: 20.0),
+            Padding(
+              padding: const EdgeInsets.only(left: 20.0, right: 20.0),
               child: AppButton(
                 text: 'Make an order',
-                color: bBlack,
+                color: kBBlack,
+                style: kBiggerWhiteTextStyle,
               ),
             ),
           ],
@@ -220,11 +248,3 @@ class _CartScreenState extends State<CartScreen> {
     );
   }
 }
-
-//
-// shape: RoundedRectangleBorder(
-// side: const BorderSide(
-// color: dColorGrey,
-// width: 0.5,
-// ),
-// borderRadius: BorderRadius.circular(5)),
