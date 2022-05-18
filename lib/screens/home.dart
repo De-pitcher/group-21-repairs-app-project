@@ -30,35 +30,34 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: blueBlue,
+      backgroundColor: kBlueBlue,
       body: GestureDetector(
         onTap: () => Navigator.of(context).pushReplacement(
           MaterialPageRoute(
             builder: (context) => const Login(),
           ),
         ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: <Widget>[
-            const Image(
-              image: AssetImage(
-                'images/homelogo.png',
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: const <Widget>[
+              Image(
+                image: AssetImage(
+                  'images/homelogo.png',
+                ),
+                width: 121.65,
+                height: 83.47,
               ),
-              width: 121.65,
-              height: 83.47,
-            ),
-            const Image(
-              image: AssetImage(
-                'images/homerepair.png',
+              Image(
+                image: AssetImage(
+                  'images/homerepair.png',
+                ),
+                width: 223,
+                height: 34,
               ),
-              width: 223,
-              height: 34,
-            ),
-            Container(
-              width: double.infinity,
-            )
-          ],
+            ],
+          ),
         ),
       ),
     );

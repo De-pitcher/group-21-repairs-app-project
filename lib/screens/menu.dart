@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:project_two/core/colors.dart';
+import 'package:project_two/core/constants.dart';
+import 'package:project_two/widgets/container.dart';
 import 'package:project_two/widgets/display_field.dart';
 
 class Menu extends StatefulWidget {
@@ -13,9 +15,9 @@ class _MenuState extends State<Menu> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: whiteLight,
+      backgroundColor: kWhiteLight,
       appBar: AppBar(
-        backgroundColor: whiteLight,
+        backgroundColor: kWhiteLight,
         leading: const Image(
           image: AssetImage('images/menu.png'),
         ),
@@ -47,20 +49,24 @@ class _MenuState extends State<Menu> {
                   Text(
                     'What\'s broken?',
                     style: TextStyle(
-                      fontSize: 20.0,
+                      fontSize: 23.0,
                       fontStyle: FontStyle.normal,
                       fontWeight: FontWeight.bold,
-                      color: dColorBlack,
+                      color: kBBlack,
                     ),
                   ),
                 ],
               ),
             ),
-            const Padding(
-              padding: EdgeInsets.all(8.0),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
               child: Card(
-                color: dColorWhite,
-                child: ListTile(
+                color: kLightAsh,
+                shape: RoundedRectangleBorder(
+                    side: const BorderSide(color: kLightAsh, width: 0.5),
+                    borderRadius: BorderRadius.circular(5)),
+                child: const ListTile(
+                  tileColor: Color(0xFFFFFEFE),
                   leading: Text(
                     'Search appliances',
                     style: TextStyle(
@@ -82,154 +88,31 @@ class _MenuState extends State<Menu> {
                 children: const [
                   Text(
                     'Offers',
-                    style: TextStyle(
-                      fontSize: 20.0,
-                      fontStyle: FontStyle.normal,
-                      fontWeight: FontWeight.bold,
-                      color: dColorBlack,
-                    ),
+                    style: kBiggerBlackTextStyle,
                   ),
                 ],
               ),
             ),
             Row(
-              children: [
-                Expanded(
-                  child: Container(
-                    child: Column(
-                      children: <Widget>[
-                        Container(
-                          height: 60,
-                          decoration: const BoxDecoration(
-                            color: dColorSkyBlue,
-                            borderRadius: BorderRadius.only(
-                              topLeft: Radius.circular(40.0),
-                              topRight: Radius.circular(40.0),
-                            ),
-                          ),
-                          child: const Center(
-                            child: Text(
-                              'Valid till june 30th',
-                              style: TextStyle(
-                                fontSize: 17.0,
-                                fontStyle: FontStyle.normal,
-                                fontWeight: FontWeight.bold,
-                                color: dColorBlack,
-                                letterSpacing: 1,
-                              ),
-                            ),
-                          ),
-                        ),
-                        Container(
-                          child: Row(
-                            children: <Widget>[
-                              const Expanded(
-                                child: Padding(
-                                  padding: EdgeInsets.only(left: 25.0),
-                                  child: Text(
-                                    'Get a 5% discount for each',
-                                    style: TextStyle(
-                                      fontSize: 17.0,
-                                      fontStyle: FontStyle.normal,
-                                      fontWeight: FontWeight.bold,
-                                      color: dColorBlack,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              ClipRRect(
-                                child: const Image(
-                                  image: AssetImage(
-                                    'images/image1.png',
-                                  ),
-                                ),
-                                borderRadius: BorderRadius.circular(40),
-                              ),
-                            ],
-                          ),
-                          decoration: const BoxDecoration(
-                            color: lightWhite,
-                            borderRadius: BorderRadius.only(
-                              bottomLeft: Radius.circular(40.0),
-                              bottomRight: Radius.circular(40.0),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                    padding: const EdgeInsets.all(8.0),
-                  ),
+              children: const [
+                CardContainer(
+                  titleText: 'Valid till june 30th',
+                  bodyText: 'Get a 5% discount for each',
+                  containerImage: AssetImage('images/image1.png'),
+                  titleCardColor: kPrimaryColor3,
+                  bodyCardColor: kLightWhite,
                 ),
-                Expanded(
-                  child: Container(
-                    child: Column(
-                      children: <Widget>[
-                        Container(
-                          height: 60,
-                          decoration: const BoxDecoration(
-                            color: dColorWhiteGrey,
-                            borderRadius: BorderRadius.only(
-                              topLeft: Radius.circular(40.0),
-                              topRight: Radius.circular(40.0),
-                            ),
-                          ),
-                          child: const Center(
-                            child: Text(
-                              'Valid until july 30th',
-                              style: TextStyle(
-                                fontSize: 17.0,
-                                fontStyle: FontStyle.normal,
-                                fontWeight: FontWeight.bold,
-                                color: dColorBlack,
-                                letterSpacing: 1,
-                              ),
-                            ),
-                          ),
-                        ),
-                        Container(
-                          child: Row(
-                            children: <Widget>[
-                              const Expanded(
-                                child: Padding(
-                                  padding: EdgeInsets.only(left: 25),
-                                  child: Text(
-                                    'Get a 5% discount for each',
-                                    style: TextStyle(
-                                      fontSize: 17.0,
-                                      fontStyle: FontStyle.normal,
-                                      fontWeight: FontWeight.bold,
-                                      color: dColorBlack,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              ClipRRect(
-                                child: const Image(
-                                  image: AssetImage(
-                                    'images/image1.png',
-                                  ),
-                                ),
-                                borderRadius: BorderRadius.circular(40),
-                              ),
-                            ],
-                          ),
-                          decoration: const BoxDecoration(
-                            color: primaryColor2,
-                            borderRadius: BorderRadius.only(
-                              bottomLeft: Radius.circular(40.0),
-                              bottomRight: Radius.circular(40.0),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                    padding: const EdgeInsets.all(8.0),
-                  ),
+                CardContainer(
+                  titleText: 'Valid until july 30th',
+                  bodyText: 'Get a 5% discount for each',
+                  containerImage: AssetImage('images/image1.png'),
+                  bodyCardColor: kPrimaryColor2,
+                  titleCardColor: kLightWhite,
                 ),
               ],
             ),
             const SizedBox(
-              height: 45,
+              height: 30,
             ),
             Padding(
               padding: const EdgeInsets.only(left: 20.0),
@@ -237,12 +120,7 @@ class _MenuState extends State<Menu> {
                 children: const [
                   Text(
                     'We can fix it',
-                    style: TextStyle(
-                      fontSize: 17.0,
-                      fontStyle: FontStyle.normal,
-                      fontWeight: FontWeight.bold,
-                      color: dColorBlack,
-                    ),
+                    style: kBiggerBlackTextStyle,
                   ),
                 ],
               ),
@@ -255,16 +133,11 @@ class _MenuState extends State<Menu> {
                     onPressed: () {},
                     child: const Text(
                       'Offers',
-                      style: TextStyle(
-                        fontSize: 17.0,
-                        fontStyle: FontStyle.normal,
-                        fontWeight: FontWeight.bold,
-                        color: dColorWhite,
-                      ),
+                      style: kBigWhiteTextStyle,
                     ),
                     style: OutlinedButton.styleFrom(
                       primary: Colors.white,
-                      backgroundColor: dColorBlack,
+                      backgroundColor: kBBlack,
                       shape: const RoundedRectangleBorder(
                           borderRadius: BorderRadius.all(Radius.circular(10))),
                     ),
@@ -274,41 +147,26 @@ class _MenuState extends State<Menu> {
                   ),
                   const Text(
                     'Kitchen',
-                    style: TextStyle(
-                      fontSize: 17.0,
-                      fontStyle: FontStyle.normal,
-                      fontWeight: FontWeight.bold,
-                      color: dColorGrey,
-                    ),
+                    style: kGreyTextStyle,
                   ),
                   const SizedBox(
                     width: 20,
                   ),
                   const Text(
                     'Livingroom',
-                    style: TextStyle(
-                      fontSize: 17.0,
-                      fontStyle: FontStyle.normal,
-                      fontWeight: FontWeight.bold,
-                      color: dColorGrey,
-                    ),
+                    style: kGreyTextStyle,
                   ),
                   const SizedBox(
                     width: 20,
                   ),
                   const Text(
                     'Bathroom',
-                    style: TextStyle(
-                      fontSize: 17.0,
-                      fontStyle: FontStyle.normal,
-                      fontWeight: FontWeight.bold,
-                      color: dColorGrey,
-                    ),
+                    style: kGreyTextStyle,
                   ),
                 ],
               ),
             ),
-            const DisplayField(
+            const MenuDisplayField(
               image: AssetImage('images/microwave_icon.png'),
               titleText: 'Fix Microwave',
               desText: 'Kitchen',
@@ -316,7 +174,7 @@ class _MenuState extends State<Menu> {
             const SizedBox(
               height: 20,
             ),
-            const DisplayField(
+            const MenuDisplayField(
               image: AssetImage('images/television_icon.png'),
               titleText: 'Fix TV set',
               desText: 'Living room',
@@ -327,25 +185,3 @@ class _MenuState extends State<Menu> {
     );
   }
 }
-//   Category _currentCategory =
-//
-//   Widget _buildFixCategory(Category category, BuildContext context) {
-//
-//   }
-// }
-// enum Category {
-//
-// }
-// leading: Column(
-//   children: const <Widget>[
-//     Image(
-//       image: AssetImage('images/menu_icon/Line 1.png'),
-//     ),
-//     Image(
-//       image: AssetImage('images/menu_icon/Line 2.png'),
-//     ),
-//     Image(
-//       image: AssetImage('images/menu_icon/Line 3.png'),
-//     )
-//   ],
-// ),

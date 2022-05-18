@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:project_two/core/constants.dart';
 import 'package:project_two/widgets/button.dart';
 import 'package:project_two/widgets/textField.dart';
 
@@ -60,82 +61,49 @@ class _CreateAccountState extends State<CreateAccount> {
                 obscureText: false,
               ),
               const SizedBox(
-                height: 10,
+                height: 15.0,
               ),
               const AppTextFormField(
                 labelText: 'Password',
                 obscureText: true,
               ),
               const SizedBox(
-                height: 10.0,
+                height: 15.0,
               ),
               const AppTextFormField(
                 labelText: 'Confirm password',
                 obscureText: true,
               ),
               const SizedBox(
-                height: 10,
+                height: 20.0,
               ),
-              const AppButton(
+              AppButton(
                 text: 'Sign up',
-                color: blueBlue,
+                color: kBlueBlue,
+                style: kBiggerWhiteTextStyle,
               ),
               const SizedBox(
                 height: 50.0,
               ),
               const Text(
-                '*  Or sing in with -',
-                style: TextStyle(
-                  fontSize: 17.0,
-                  fontStyle: FontStyle.normal,
-                  color: dColorGrey,
-                ),
+                '\u2022  Or sing in with -',
+                style: kBlackGreyTextStyle,
               ),
               Row(
-                children: <Widget>[
-                  Expanded(
-                    child: Padding(
-                      padding: const EdgeInsets.all(16.0),
-                      child: OutlinedButton(
-                        onPressed: () {},
-                        child: const Image(
-                          image: AssetImage(
-                            'images/google.png',
-                          ),
-                          height: 50,
-                          width: 50,
-                        ),
-                      ),
+                children: const <Widget>[
+                  WhiteButton(
+                    image: AssetImage(
+                      'images/google.png',
                     ),
                   ),
-                  Expanded(
-                    child: Padding(
-                      padding: const EdgeInsets.all(16.0),
-                      child: OutlinedButton(
-                        onPressed: () {},
-                        child: const Image(
-                          image: AssetImage(
-                            'images/facebook.png',
-                          ),
-                          height: 50,
-                          width: 50,
-                        ),
-                      ),
+                  WhiteButton(
+                    image: AssetImage(
+                      'images/facebook.png',
                     ),
                   ),
-                  Expanded(
-                    child: Padding(
-                      padding: const EdgeInsets.all(16.0),
-                      child: OutlinedButton(
-                        onPressed: () {},
-                        child: const Image(
-                          image: AssetImage(
-                            'images/twitter.png',
-                          ),
-                          height: 50,
-                          width: 50,
-                        ),
-                      ),
+                  WhiteButton(
+                    image: AssetImage(
+                      'images/twitter.png',
                     ),
                   ),
                 ],

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:project_two/core/colors.dart';
+import 'package:project_two/core/constants.dart';
 import 'package:project_two/widgets/button.dart';
 import 'package:project_two/widgets/textField.dart';
 
@@ -23,7 +24,7 @@ class _LoginState extends State<Login> {
               alignment: Alignment.topRight,
               image: AssetImage('images/leftlogo.png'),
               opacity: 50,
-              scale: 1.1,
+              scale: 1.3,
             ),
           ),
           child: Padding(
@@ -38,7 +39,7 @@ class _LoginState extends State<Login> {
                   image: AssetImage('images/Repair home.png'),
                 ),
                 const SizedBox(
-                  height: 50,
+                  height: 50.0,
                 ),
                 Row(
                   children: const [
@@ -46,82 +47,53 @@ class _LoginState extends State<Login> {
                       padding: EdgeInsets.all(8.0),
                       child: Text(
                         'Login to your account',
-                        style: TextStyle(
-                          fontFamily: 'Source Sans Pro',
-                          fontSize: 20.0,
-                          fontStyle: FontStyle.normal,
-                          fontWeight: FontWeight.bold,
-                        ),
+                        style: kBiggerBlackTextStyle,
                       ),
                     ),
                   ],
                 ),
-                const AppTextFormField(labelText: 'Email', obscureText: false),
+                const AppTextFormField(
+                  labelText: 'Email',
+                  obscureText: false,
+                ),
+                const SizedBox(
+                  height: 15.0,
+                ),
                 const AppTextFormField(
                     labelText: 'Password', obscureText: true),
                 const SizedBox(
-                  height: 10.0,
+                  height: 15.0,
                 ),
-                const AppButton(
+                AppButton(
                   text: 'Sign in',
-                  color: blueBlue,
+                  color: kBlueBlue,
+                  style: kBiggerWhiteTextStyle,
                 ),
                 const SizedBox(
                   height: 50.0,
                 ),
                 const Text(
-                  '*  Or sing in with -',
-                  style: TextStyle(
-                    fontSize: 17.0,
-                    fontStyle: FontStyle.normal,
-                    color: dColorGrey,
-                  ),
+                  '\u2022  Or sing in with -',
+                  style: kBlackGreyTextStyle,
+                ),
+                const SizedBox(
+                  height: 20.0,
                 ),
                 Row(
-                  children: <Widget>[
-                    Expanded(
-                      child: Padding(
-                        padding: const EdgeInsets.all(16.0),
-                        child: OutlinedButton(
-                          onPressed: () {},
-                          child: const Image(
-                            image: AssetImage(
-                              'images/google.png',
-                            ),
-                            height: 50,
-                            width: 50,
-                          ),
-                        ),
+                  children: const <Widget>[
+                    WhiteButton(
+                      image: AssetImage(
+                        'images/google.png',
                       ),
                     ),
-                    Expanded(
-                      child: Padding(
-                        padding: const EdgeInsets.all(16.0),
-                        child: OutlinedButton(
-                          onPressed: () {},
-                          child: const Image(
-                            image: AssetImage(
-                              'images/facebook.png',
-                            ),
-                            height: 50,
-                            width: 50,
-                          ),
-                        ),
+                    WhiteButton(
+                      image: AssetImage(
+                        'images/facebook.png',
                       ),
                     ),
-                    Expanded(
-                      child: Padding(
-                        padding: const EdgeInsets.all(16.0),
-                        child: OutlinedButton(
-                          onPressed: () {},
-                          child: const Image(
-                            image: AssetImage(
-                              'images/twitter.png',
-                            ),
-                            height: 50,
-                            width: 50,
-                          ),
-                        ),
+                    WhiteButton(
+                      image: AssetImage(
+                        'images/twitter.png',
                       ),
                     ),
                   ],
@@ -133,12 +105,8 @@ class _LoginState extends State<Login> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: const <Widget>[
                     Text(
-                      '*   Don\'t have an account?',
-                      style: TextStyle(
-                        fontSize: 17.0,
-                        fontStyle: FontStyle.normal,
-                        color: dColorGrey,
-                      ),
+                      '\u2022  Don\'t have an account?',
+                      style: kBigBlackTextStyle,
                     ),
                     SizedBox(
                       width: 10.0,
@@ -146,9 +114,9 @@ class _LoginState extends State<Login> {
                     Text(
                       'Sign up',
                       style: TextStyle(
-                        fontSize: 17.0,
+                        fontSize: 16.0,
                         fontStyle: FontStyle.normal,
-                        color: dColorBlue,
+                        color: kBBlack,
                       ),
                     ),
                   ],
