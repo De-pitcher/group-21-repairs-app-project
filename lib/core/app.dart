@@ -22,7 +22,7 @@ class _AppState extends State<App> {
       title: 'Group 21',
       initialRoute: '/login',
       routes: {
-        '/login': (BuildContext context) => const MicrowaveScreen(),
+        '/login': (BuildContext context) => const CartScreen(),
       },
     );
   }
