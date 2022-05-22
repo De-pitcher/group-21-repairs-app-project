@@ -60,6 +60,12 @@ flutter:
     - family: Schyler
       fonts:
         - asset: fonts/SourceSansPro-Regular.ttf
+    - family: Gotham
+      fonts:
+        - asset: fonts/Gotham/GothamMedium.ttf
+#    - family: Gotham
+#      fonts:
+#        - asset: fonts/gobold/
   #   - family: Trajan Pro
   #     fonts:
   #       - asset: fonts/TrajanPro.ttf

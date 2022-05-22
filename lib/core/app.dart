@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:project_two/screens/cart.dart';
 import 'package:project_two/screens/create_account.dart';
-import 'package:project_two/screens/home.dart';
+import 'package:project_two/screens/splash_screen.dart';
 import 'package:project_two/screens/menu.dart';
 import 'package:project_two/screens/microwave.dart';
 
@@ -20,9 +20,14 @@ class _AppState extends State<App> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Group 21',
-      initialRoute: '/login',
+      initialRoute: '/splash_screen',
       routes: {
-        '/login': (BuildContext context) => const CartScreen(),
+        '/splash_screen': (context) => const SplashScreen(),
+        '/login': (context) => const Login(),
+        '/sign_up': (context) => const CreateAccount(),
+        '/menu': (context) => const Menu(),
+        '/microwave': (context) => const MicrowaveScreen(),
+        '/cart': (context) => const CartScreen(),
       },
     );
   }

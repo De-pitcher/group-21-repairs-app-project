@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:project_two/core/colors.dart';
 import 'package:project_two/screens/login.dart';
 
-class Home extends StatefulWidget {
-  const Home({Key? key}) : super(key: key);
+class SplashScreen extends StatefulWidget {
+  const SplashScreen({Key? key}) : super(key: key);
 
   @override
-  State<Home> createState() => _HomeState();
+  State<SplashScreen> createState() => _SplashScreenState();
 }
 
-class _HomeState extends State<Home> {
+class _SplashScreenState extends State<SplashScreen> {
   decideNavigation() {
     Future.delayed(
       const Duration(seconds: 2),

@@ -31,31 +31,51 @@ const kBlackSmallerTextStyle = TextStyle(
   color: kBlackText,
 );
 const kBiggerBlackTextStyle = TextStyle(
-  fontFamily: 'Source Sans Pro',
+  fontFamily: 'Gotham',
   fontSize: 20.0,
   fontStyle: FontStyle.normal,
   fontWeight: FontWeight.bold,
   color: kBBlack,
 );
 const kBigWhiteTextStyle = TextStyle(
-  fontFamily: 'Source Sans Pro',
+  fontFamily: 'Gotham',
+  height: 19.14,
   fontSize: 16.0,
   fontStyle: FontStyle.normal,
   fontWeight: FontWeight.bold,
   color: kWhiteLight,
 );
 const kBigBlackTextStyle = TextStyle(
-  fontFamily: 'Source Sans Pro',
+  fontFamily: 'Gotham',
   fontSize: 16.0,
   fontStyle: FontStyle.normal,
   fontWeight: FontWeight.bold,
   color: kBBlack,
 );
-
+const kBlackButtonTextStyle = TextStyle(
+  fontSize: 13,
+  fontStyle: FontStyle.normal,
+  fontWeight: FontWeight.bold,
+  color: kBBlack,
+);
 const kBiggerWhiteTextStyle = TextStyle(
-  fontFamily: 'Source Sans Pro',
+  fontFamily: 'Gotham',
   fontSize: 20.0,
   fontStyle: FontStyle.normal,
   fontWeight: FontWeight.bold,
   color: kWhiteLight,
+);
+const kTextFieldInputDecoration = InputDecoration(
+  filled: true,
+  fillColor: Colors.white,
+  hintText: 'Enter City Name',
+  hintStyle: TextStyle(
+    color: Colors.grey,
+  ),
+  border: OutlineInputBorder(
+    borderRadius: BorderRadius.all(
+      Radius.circular(10.0),
+    ),
+    borderSide: BorderSide.none,
+  ),
 );
